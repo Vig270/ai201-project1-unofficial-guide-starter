@@ -84,11 +84,21 @@ def retrieve(query, k=4):
         n_results=k
     )
 
+    retrieved_chunks = []
+
     for i in range(len(results["documents"][0])):
         print("\n--- RESULT", i + 1, "---")
         print("TEXT:", results["documents"][0][i])
         print("SOURCE:", results["metadatas"][0][i])
         print("DISTANCE:", results["distances"][0][i])
+
+        retrieved_chunks.append({
+            "text": results["documents"][0][i],
+            "source": results["metadatas"][0][i]["source"],
+            "distance": results["distances"][0][i]
+        })
+
+    return retrieved_chunks
 
 
 # -------------------------
