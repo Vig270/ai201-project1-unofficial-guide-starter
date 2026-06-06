@@ -1,0 +1,28 @@
+COURSE: CS 220 (Systems Fundamentals / C Programming Track at Binghamton University)
+
+OVERVIEW:
+CS 220 is a systems-level computer science course that introduces students to low-level programming concepts, typically using C and related systems tools. The course is known for being challenging due to its focus on memory management, pointers, and systems thinking.
+
+PROFESSOR REVIEWS:
+
+Thomas Bartenstein:
+- Lectures are often described as overly complex and not beginner-friendly.
+- Slides are considered dense and hard to follow.
+- Explanation of code and concepts is sometimes insufficient.
+- Some students report low engagement and difficulty understanding lecture content.
+- Teaching style assumes prior knowledge that many students may not have.
+
+Aravind Prakash:
+- Known for pushing students to deeply understand concepts.
+- Assignments and labs build on previous work, meaning earlier mistakes can affect later performance.
+- Conceptually challenging but intellectually rigorous.
+- Students may find material easy in class but significantly harder in assignments.
+
+STUDENT EXPERIENCE SUMMARY:
+- Course difficulty is moderate to high depending on prior experience with C and systems programming.
+- Requires independent learning outside lectures.
+- Labs and assignments are critical to understanding material.
+- Success depends heavily on early preparation and consistency.
+
+RECENT CONTEXT:
+Recent semesters include Fall 2024–Fall 2026 offerings with multiple instructors including Bartenstein, Prakash, and others.

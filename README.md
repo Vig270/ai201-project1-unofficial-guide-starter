@@ -9,10 +9,9 @@
 
 ## Domain
 
-<!-- What topic or category of knowledge does your system cover?
-     Why is this knowledge valuable, and why is it hard to find through official channels?
-     Example: "Student reviews of CS professors at [university] — useful because official
-     course descriptions don't reflect teaching style, exam difficulty, or workload." -->
+This project focuses on building an unofficial student guide for Binghamton University Computer Science courses using real student experiences, course descriptions, and professor reviews. The goal is to help students understand course difficulty, workload, and teaching styles by aggregating fragmented information from Reddit threads, course syllabi, and department pages.
+
+This information is often scattered across Reddit posts, outdated syllabi, and informal reviews, making it difficult for students to get a clear and reliable overview of what CS courses and professors are actually like.
 
 ---
 

@@ -1,0 +1,3 @@
+CS140 is a strict prerequisite for CS220 at Binghamton University. Students who attempt to register for CS220 without completing CS140 credit are typically automatically dropped from the course by the registration system.
+
+This indicates that CS course sequencing is strictly enforced and prerequisite completion is required before advancing to higher-level CS classes.

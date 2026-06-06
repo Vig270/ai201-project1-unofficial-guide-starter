@@ -1,0 +1,24 @@
+CHUNK 1
+COURSE: CS 140 – Programming with Objects / Introduction to Computer Science (Binghamton University) COURSE OVERVIEW: CS 140 introduces foundational concepts in programming and software development using Java, with an emphasis on object-oriented programming and problem solving. Students are expected to have a basic background in procedural programming (CS 110 level or equivalent). CORE TOPICS: - P
+
+CHUNK 2
+nd in procedural programming (CS 110 level or equivalent). CORE TOPICS: - Primitive and reference data types - Variables, expressions, and assignment - Methods/functions, parameters, and control flow (selection, iteration) - Recursion fundamentals - Exception handling - Data structures: linear structures and maps - File I/O and file types - Basic GUI programming - Object-oriented programming princ
+
+CHUNK 3
+and file types - Basic GUI programming - Object-oriented programming principles: - Inheritance - Interfaces - Programming to abstractions - Introduction to generics - Basic concurrency (threads introduction) - Code documentation using Javadoc - Debugging and testing using JUnit - Version control and development environments (e.g., Eclipse/NetBeans, command line tools) COURSE FORMAT: - Lectures +
+
+CHUNK 4
+s (e.g., Eclipse/NetBeans, command line tools) COURSE FORMAT: - Lectures + required lab sessions - Labs focus on supervised programming and debugging practice - Emphasis on hands-on coding rather than purely theoretical instruction - Assignments include coding tasks and structured programming exercises PREREQUISITES: - CS 110 or equivalent foundational programming experience - Math 225 (or equival
+
+CHUNK 5
+10 or equivalent foundational programming experience - Math 225 (or equivalent requirement depending on major rules) - Minimum grade C- in prerequisites CREDITS: 4 COURSE STYLE NOTES (STUDENT EXPERIENCES): David Garrison: - Lectures described as unclear and difficult to follow - Slides often feel dense and not well-explained - Assignments may require significant independent interpretation - Some s
+
+CHUNK 6
+d - Assignments may require significant independent interpretation - Some students report difficulty understanding expectations Leslie Lander: - Assignments often include structured coding exercises with partial guidance - Some students feel they complete tasks without fully understanding underlying concepts - Lectures described as dull or not very engaging GENERAL STUDENT FEEDBACK: - Course can f
+
+CHUNK 7
+ribed as dull or not very engaging GENERAL STUDENT FEEDBACK: - Course can feel self-learning heavy - Success depends on outside study and problem-solving ability - Assignment instructions may be unclear and require interpretation - Content is foundational for later CS courses RECENT COURSE CONTEXT: - Offered under multiple instructors across recent semesters - Class sizes vary approximately from s
+
+CHUNK 8
+instructors across recent semesters - Class sizes vary approximately from small to moderate enrollment - Course title has included variations such as "Programming with Objects"
+

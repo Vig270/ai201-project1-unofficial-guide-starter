@@ -1,0 +1,9 @@
+CS140 at Binghamton University is considered challenging for many students, especially when taught by certain instructors.
+
+Some students report that the course content is advanced for an introductory class, including topics such as recursion, data structures, and graph algorithms earlier than expected. This can make the class feel overwhelming for beginners.
+
+Others mention that CS140 is designed as a “weed-out” course to increase rigor in early CS education. Students are expected to self-learn and rely heavily on office hours.
+
+There are mixed opinions on professors. Some students find certain instructors difficult to follow, while others recommend specific professors as more approachable and helpful.
+
+Overall, students agree that CS140 requires significant effort and may be more difficult than other 100-level courses.

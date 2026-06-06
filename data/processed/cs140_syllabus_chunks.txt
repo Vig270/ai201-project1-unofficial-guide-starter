@@ -1,0 +1,27 @@
+CHUNK 1
+COURSE: CS 140 – Computer Systems / Digital Logic & Assembly Fundamentals (Binghamton University) COURSE OBJECTIVES: This course introduces the fundamentals of modern computing systems, focusing on both hardware and low-level software concepts. Key topics include: - Boolean logic and basic digital circuits - Finite state machines and sequential logic design - Computer architecture fundamentals - B
+
+CHUNK 2
+chines and sequential logic design - Computer architecture fundamentals - Binary number systems (including integers and 2’s complement) - Registers, memory, and basic storage systems - Assembly language programming and its relationship to C - Use of logic and architecture simulators Students are expected to develop the ability to: - Program in assembly language and understand its connection to C -
+
+CHUNK 3
+ity to: - Program in assembly language and understand its connection to C - Design and analyze simple digital circuits - Understand finite state machines and sequential circuit behavior - Work with low-level storage and memory structures - Interpret binary representations of data - Use simulation tools for computer architecture concepts TEXTBOOK: Harris & Harris, Digital Design and Computer Archit
+
+CHUNK 4
+ture concepts TEXTBOOK: Harris & Harris, Digital Design and Computer Architecture (MIPS Edition) - Course content covers most of the textbook - Begins with C programming and Unix tools - Progresses into digital logic, architecture, and processor design - Hardware description languages (Chapter 4) covered briefly - Supplementary C programming materials provided via appendix PDF LECTURE FORMAT: - St
+
+CHUNK 5
+tary C programming materials provided via appendix PDF LECTURE FORMAT: - Students are expected to take notes during lectures - Lecture slides may be provided from other universities but are not a substitute for attendance - Active participation and note-taking are required - Lectures may be recorded and posted online for review LECTURE CONTENT OVERVIEW: - Early course: C programming, Unix tools, d
+
+CHUNK 6
+view LECTURE CONTENT OVERVIEW: - Early course: C programming, Unix tools, development environments - Binary systems and Boolean logic fundamentals - Combinational and sequential logic design - Finite state machines and memory elements - Arithmetic circuits and simple processor design using simulators - Assembly language (MIPS) and relation to C pointers and memory - Microarchitecture: single-cycle
+
+CHUNK 7
+PS) and relation to C pointers and memory - Microarchitecture: single-cycle, multi-cycle, and pipelined processors - Memory systems, I/O, interrupts, and OS-level concepts (introductory) ASSESSMENT STRUCTURE: - 10 Labs: 20% - 10 Homework Assignments: 30% - Midterm Exam: 20% - Final Exam: 30% GRADING SCALE: - A/A-: 90–100 - B+/B/B-: 80–89 - C+/C/C-: 70–79 - Below 65: F POLICIES: - Exams are in-pers
+
+CHUNK 8
+B+/B/B-: 80–89 - C+/C/C-: 70–79 - Below 65: F POLICIES: - Exams are in-person and closed-book - No calculators or electronic devices allowed - Homework is released weekly and due Sunday night (no late submissions) - Labs are in-person and require attendance and participation - TA contributes to lab grading based on effort and completion - Course videos may be available for missed lectures
+
+CHUNK 9
+nd completion - Course videos may be available for missed lectures
+

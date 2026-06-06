@@ -1,0 +1,12 @@
+CHUNK 1
+Binghamton Computer Science students often recommend careful planning when stacking CS courses due to increasing workload and prerequisite chains. For early CS courses (100–200 level), students advise taking them at a steady pace. These courses can be difficult to overload because they often include labs, new programming languages like C or C++, and strict prerequisites. Courses such as CS220 and
+
+CHUNK 2
+nguages like C or C++, and strict prerequisites. Courses such as CS220 and CS310 are noted as particularly challenging when taken together. For mid-level courses (300 level), students suggest completing CS375 early since it is a prerequisite for many advanced courses. Some students recommend pairing CS320 and CS350 due to overlapping concepts. CS373 is described as conceptually abstract and mathem
+
+CHUNK 3
+verlapping concepts. CS373 is described as conceptually abstract and mathematically intensive, so student success often depends on comfort with theoretical material. Upper-level courses (400 level electives) are generally project-based with fewer exams, and students recommend balancing them with other coursework for workload management. Certain professors are noted for offering challenging but man
+
+CHUNK 4
+d management. Certain professors are noted for offering challenging but manageable advanced courses. Overall, students emphasize strategic scheduling, avoiding overloading early core courses, and sequencing prerequisites carefully to reduce difficulty in later semesters.
+

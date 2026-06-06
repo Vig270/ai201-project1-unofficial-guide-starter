@@ -9,7 +9,9 @@
 
 ## Domain
 
-<!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+This project focuses on building an unofficial student guide for Binghamton University Computer Science courses using real student experiences, course descriptions, and professor reviews. The goal is to help students understand course difficulty, workload, and teaching styles by aggregating fragmented information from Reddit threads, course syllabi, and department pages.
+
+This information is often scattered across Reddit posts, outdated syllabi, and informal reviews, making it difficult for students to get a clear and reliable overview of what CS courses and professors are actually like.
 
 ---
 
@@ -20,16 +22,16 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | Reddit | cs220       | data/raw/reddit_cs140_difficulty.txt
+| 2 | Reddit | cs140       | data/raw/reddit_cs220_workload.txt
+| 3 | Reddit | cs prereq   | data/raw/reddit_cs_prereqs.txt
+| 4 | Reddit | cs experience | data/raw/reddit_cs_experience.txt
+| 5 | Coursicle | gives reviews on professor | data/raw/cs140_overview.txt
+| 6 | studocu | gives a good idea on the expectations of class | data/raw/cs140_syllabus.txt
+| 7 | Coursicle | gives reviews on professor | data/raw/cs220_description.txt
+| 8 | Binghamton | talks about undergradwork | data/raw/cs_undergrad_program.txt
+| 9 | Binghamton | lists the facility directories | data/raw/cs_faculty_directory.txt
+| 10 | Binghamton | comes with several cs departments | data/raw/cs_department.txt
 
 ---
 
@@ -40,11 +42,11 @@
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+Chunk size: 400 characters
+Overlap: 75 characters
 
-**Overlap:**
-
-**Reasoning:**
+Reasoning:
+Documents include short Reddit comments and medium-length course descriptions. A moderate chunk size preserves full ideas without splitting opinions or course details. Overlap ensures important context (like prerequisites or professor opinions) is not lost across boundaries.
 
 ---
 
@@ -56,11 +58,11 @@
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
+Embedding model:all-MiniLM-L6-v2 (sentence-transformers)
 
-**Top-k:**
+Top-k: 3 - 5 chunks
 
-**Production tradeoff reflection:**
+Production tradeoff reflection: Retrieving 3–5 chunks provides enough context for the LLM without overwhelming it with irrelevant information. Embeddings help match meaning even when wording differs (ex, “hard class” vs “very difficult workload”).
 
 ---
 
@@ -73,11 +75,11 @@
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | How difficult is CS140 according to students? | It is considered hard / weed-out / depends on professor
+| 2 | Which professor is preferred for CS220? | Aravind Prakash vs Bartenstein opinions
+| 3 | Is CS140 good for beginners? | Mixed, depends on C and assembly experience
+| 4 | How heavy is workload in CS220? | ~5 homeworks + projects, medium-high workload
+| 5 | Should CS220 and CS140 be taken together? | Usually discouraged due to prereqs + workload
 
 ---
 
@@ -87,33 +89,39 @@
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. Reddit comments are noisy and opinion-based, which may confuse retrieval and mix conflicting answers.
 
-2.
+2. Course syllabus are long and may get split across chunks, losing important context like grading policies.
 
 ---
 
 ## Architecture
 
-<!-- Draw a diagram of your pipeline showing the five stages:
-     Document Ingestion → Chunking → Embedding + Vector Store → Retrieval → Generation
-     Label each stage with the tool or library you're using.
-     You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
-     You'll use this diagram as context when prompting AI tools to implement each stage. -->
+Documents (raw txt files)
+        ↓
+Chunking (Python script)
+        ↓
+Embeddings (all-MiniLM-L6-v2)
+        ↓
+Vector DB (ChromaDB)
+        ↓
+Retrieval (top-k similarity search)
+        ↓
+LLM Generation (ChatGPT / API)
 
 ---
 
 ## AI Tool Plan
 
-<!-- For each part of the pipeline below, describe:
-     - Which AI tool you plan to use (Claude, Copilot, ChatGPT, etc.)
-     - What you'll give it as input (which sections of this planning.md, which requirements)
-     - What you expect it to produce
-     - How you'll verify the output matches your spec
+I will use ChatGPT to help understand Milestone instructions and clarify concepts like chunking and retrieval.
 
-     "I'll use AI to help me code" is not a plan.
-     "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
-     with my specified chunk size and overlap" is a plan. -->
+For chunking, I will provide my Chunking Strategy section and ask it to help implement a Python function for splitting text with 400-character chunks and 75-character overlap.
+
+For debugging, I will use ChatGPT to help fix errors in file paths and chunking logic.
+
+I will verify outputs manually by checking chunk sizes and ensuring all documents are properly processed.
+
+I will use Copilot in VS Code for autocomplete and implementation assistance during embedding and vector store setup.
 
 **Milestone 3 — Ingestion and chunking:**
 
