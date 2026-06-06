@@ -92,7 +92,8 @@ This information is often scattered across Reddit posts, outdated syllabi, and i
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
+| 1 | Who is preferred for CS220? | students prefer Prakash over Bartenstein | I don’t have enough information. | Partially relevant (if it retrieved CS220-related chunks but not a direct comparison).| Accurate / Grounded, because the system did not invent a preference not supported by the documents.
+
 | 2 | | | | | |
 | 3 | | | | | |
 | 4 | | | | | |
