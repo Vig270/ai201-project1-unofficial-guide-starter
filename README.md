@@ -23,35 +23,31 @@ This information is often scattered across Reddit posts, outdated syllabi, and i
 
 | # | Source | Type | URL or file path |
 |---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | Reddit | cs220       | data/raw/reddit_cs140_difficulty.txt
+| 2 | Reddit | cs140       | data/raw/reddit_cs220_workload.txt
+| 3 | Reddit | cs prereq   | data/raw/reddit_cs_prereqs.txt
+| 4 | Reddit | cs experience | data/raw/reddit_cs_experience.txt
+| 5 | Coursicle | gives reviews on professor | data/raw/cs140_overview.txt
+| 6 | studocu | gives a good idea on the expectations of class | data/raw/cs140_syllabus.txt
+| 7 | Coursicle | gives reviews on professor | data/raw/cs220_description.txt
+| 8 | Binghamton | talks about undergradwork | data/raw/cs_undergrad_program.txt
+| 9 | Binghamton | lists the facility directories | data/raw/cs_faculty_directory.txt
+| 10 | Binghamton | comes with several cs departments | data/raw/cs_department.txt
 
 ---
 
 ## Chunking Strategy
 
-<!-- Describe your chunking approach with enough specificity that someone else could reproduce it.
-     Include:
-     - Chunk size (characters or tokens) and why that size fits your documents
-     - Overlap size and why (or why not) you used overlap
-     - Any preprocessing you did before chunking (e.g., stripping HTML, removing headers)
-     - What your final chunk count was across all documents -->
+<!-- How will you split documents into chunks?
+     State your chunk size (in tokens or characters), overlap size, and explain why those
+     numbers fit the structure of your documents.
+     A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+Chunk size: 400 characters
+Overlap: 75 characters
 
-**Overlap:**
-
-**Why these choices fit your documents:**
-
-**Final chunk count:**
+Reasoning:
+Documents include short Reddit comments and medium-length course descriptions. A moderate chunk size preserves full ideas without splitting opinions or course details. Overlap ensures important context (like prerequisites or professor opinions) is not lost across boundaries.
 
 ---
 
@@ -63,9 +59,9 @@ This information is often scattered across Reddit posts, outdated syllabi, and i
      Consider: context length limits, multilingual support, accuracy on domain-specific text,
      latency, and local vs. API-hosted. -->
 
-**Model used:**
+**Model used: all-MiniLM-L6-v2 from sentence-transformers**
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection: This model was chosen because it is lightweight, runs locally, and performs well on semantic similarity tasks. In a production system, a larger model like OpenAI text-embedding-3-large would improve accuracy and context understanding but would increase cost and latency. A local model was preferred for simplicity and no API dependency.**
 
 ---
 
@@ -78,9 +74,9 @@ This information is often scattered across Reddit posts, outdated syllabi, and i
      Do not just say "I told it to use the documents" — show the actual instruction or explain
      the mechanism. -->
 
-**System prompt grounding instruction:**
+**System prompt grounding instruction: Use ONLY the provided context. If the answer is not in the context, say 'I don't have enough information.' Do not use external knowledge**
 
-**How source attribution is surfaced in the response:**
+**How source attribution is surfaced in the response: Retrieved chunks include metadata which are from source file and chunk ID, which are returned alongside the LLM response in the UI. The frontend displays a list of sources under each answer and gives the accurate txt sources**
 
 ---
 
@@ -92,12 +88,15 @@ This information is often scattered across Reddit posts, outdated syllabi, and i
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | Who is preferred for CS220? | students prefer Prakash over Bartenstein | I don’t have enough information. | Partially relevant (if it retrieved CS220-related chunks but not a direct comparison).| Accurate / Grounded, because the system did not invent a preference not supported by the documents.
+| 1 | Which professor is preferred for CS220? | students prefer Prakash over Bartenstein | I don’t have enough information. | Partially relevant. | Grounded (no hallucination), because the system did not invent a preference not supported by the documents.
 
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 2 | Is CS 140 good for beginners? | No, it is hard for beginners and must self learn | No, it is hard for beginners and must self learn | Relevant | Accurate
+
+| 3 | How heavy is workload in CS220? | It is manageable | It is manageable | Relevant | Accurate 
+
+| 4 | Should CS220 and CS140 be taken together? | No, it has prereqs | No, it has prereqs so they should not be taken together | Relevant | Accurate
+
+| 5 | How difficult is CS140 according to students? | It is very difficult for students for sure | CS140 is considered challenging for many students, especially for beginners | Relevant | Accurate
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate
@@ -117,13 +116,13 @@ This information is often scattered across Reddit posts, outdated syllabi, and i
      "The embedding model treated the professor's nickname as out-of-vocabulary and returned
      results from an unrelated review" is an explanation. -->
 
-**Question that failed:**
+**Question that failed: Who is preferred for CS 220?**
 
-**What the system returned:**
+**What the system returned: I dont have enough information.**
 
-**Root cause (tied to a specific pipeline stage):**
+**Root cause (tied to a specific pipeline stage): The retrieval system did not return any chunk that explicitly compares CS220 professors. The dataset contains course descriptions and workload discussions, but no direct preference ranking between professors, so the model correctly refused to hallucinate.**
 
-**What you would change to fix it:**
+**What you would change to fix it: Add more data and bring ratemyprofessor or add more professor-specific review data from reviews or improve document coverage for instructor comparisons.**
 
 ---
 
@@ -132,9 +131,9 @@ This information is often scattered across Reddit posts, outdated syllabi, and i
 <!-- Reflect on how planning.md shaped your implementation.
      Answer both questions with at least 2–3 sentences each. -->
 
-**One way the spec helped you during implementation:**
+**One way the spec helped you during implementation: The planning.md helped define chunk size and overlap before implementation, which reduced trial-and-error during embedding and retrieval setup.**
 
-**One way your implementation diverged from the spec, and why:**
+**One way your implementation diverged from the spec, and why: The expected retrieval distance threshold (<0.5) was not strictly met, but retrieval still worked well, so the threshold was not enforced.**
 
 ---
 
@@ -151,12 +150,12 @@ This information is often scattered across Reddit posts, outdated syllabi, and i
 
 **Instance 1**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI: chunking strategy + raw documents*
+- *What it produced: chunking function with sliding window*
+- *What I changed or overrode: adjusted chunk size to 400 and overlap to 75 after testing*
 
 **Instance 2**
 
-- *What I gave the AI:*
-- *What it produced:*
-- *What I changed or overrode:*
+- *What I gave the AI: debugging error logs from embedding.py*
+- *What it produced: fix for ChromaDB + file path issues*
+- *What I changed or overrode: manually verified retrieval outputs*
